@@ -1,0 +1,24 @@
+{
+  "name": "cui-api",
+  "version": "1.0.0",
+  "description": "API for generating and validating Portuguese CUI codes",
+  "main": "cui-api.js",
+  "scripts": {
+    "start": "node cui-api.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "CUI",
+    "Portugal",
+    "API"
+  ],
+  "author": "Dário Dias",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
