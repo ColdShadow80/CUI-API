@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  cui-api:
+    build: .
+    container_name: cui-api
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+        reservations:
+          memory: 128M
+
+volumes:
+  cui-api-logs:
+    driver: local
